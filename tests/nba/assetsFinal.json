@@ -1,0 +1,214 @@
+{
+  "assets": [
+    {
+      "symbol": "atl",
+      "name": "hawks",
+      "description": "Atlanta Hawks",
+      "uri": "https://arweave.net/PBFWXXZ328sbhtMNVAT1UKUMuC-DvY8wVeiFiyF9VFA",
+      "address": "7wynr9rArZfQ6EGPKdAEbYpPEbYpR5gxrs6mgQkYNTAy"
+    },
+    {
+      "symbol": "bkn",
+      "name": "nets",
+      "description": "Brooklyn Nets",
+      "uri": "https://arweave.net/CJ7REsgzI7uTStxv4jSPnmsB8btzjs1R0W55vSoVOpI",
+      "address": "28jEpBjfit1LyexH4zPY4hjAk9hrBQ7QHehtDWHy2efC"
+    },
+    {
+      "symbol": "bos",
+      "name": "celtics",
+      "description": "Boston Celtics",
+      "uri": "https://arweave.net/uNvUMvO4ioLOxx2HLo8nILmVhj9S6TY6xDqq4wdO4LA",
+      "address": "GYrh3nxXMvMcunQ1bjdEBwCox7mBjHbu5QaeXSGKBz8J"
+    },
+    {
+      "symbol": "cha",
+      "name": "hornets",
+      "description": "Charlotte Hornets",
+      "uri": "https://arweave.net/wQdiBA1TML1TNoSN5FE78cv2ScF4wqUlJmpmG3h-Bi4",
+      "address": "Hen1PUAuLypNXp7MMW49spoqUevs6GBH255Js3YNBGmk"
+    },
+    {
+      "symbol": "chi",
+      "name": "bulls",
+      "description": "Chicago Bulls",
+      "uri": "https://arweave.net/t2nu6RiseAa5Lvu7V2-Dd4oCk9z6KGWFSucV64WDHMA",
+      "address": "8aAQ6wxt7T6eAMgeNYSLKqdJhxE4VuzmFpUzRfTWKDLJ"
+    },
+    {
+      "symbol": "cle",
+      "name": "cavaliers",
+      "description": "Cleveland Cavaliers",
+      "uri": "https://arweave.net/Y8oEoaxxcm1ktbqCtTysKjlKiXMKfFelJqlZ5sbSrbA",
+      "address": "8xKMCLtsY8mmb4vtSsTfBr8G2cE3E5D1BtpePiLS3WFs"
+    },
+    {
+      "symbol": "dal",
+      "name": "mavericks",
+      "description": "Dallas Mavericks",
+      "uri": "https://arweave.net/tLSPX-mpHw1jPWYAEN2wHqdis6lQyo1qKj-zk7hNZW8",
+      "address": "6fXEBHLwCdAZcKaUzDuPD45E6mUqJrvJ6sVTLhRLEyZC"
+    },
+    {
+      "symbol": "den",
+      "name": "nuggets",
+      "description": "Denver Nuggets",
+      "uri": "https://arweave.net/iLu3rEA-3nlN_AWjHJANctvqxeZtQ2UfAVp0SQrxyyI",
+      "address": "J1nth41giqdnjfx3FG1WnroB7z35LKHg8UxHjLwRMEwd"
+    },
+    {
+      "symbol": "det",
+      "name": "pistons",
+      "description": "Detroit Pistons",
+      "uri": "https://arweave.net/sFZWjHyVU0-2dC47dd5ZlFss1tyG95eo_XhAs_Fx_LQ",
+      "address": "BifTUrdUdm6n5UCzA1t7c7ST5A9qYNwcnQcdcgqnAcEd"
+    },
+    {
+      "symbol": "gsw",
+      "name": "warriors",
+      "description": "Golden State Warriors",
+      "uri": "https://arweave.net/13_NWw-F7sm4XSd2U-l_U4vbOucrbXo8W3pAU3uyUNs",
+      "address": "EXMxoYDiQpjHDYiPPfvCTXhZbtvVoRpwafHzPWjf4UHj"
+    },
+    {
+      "symbol": "hou",
+      "name": "rockets",
+      "description": "Houston Rockets",
+      "uri": "https://arweave.net/mpTvfmhs1a3ooH8SIrm6zZKzfQ3e3EC7vipdfnTVJbk",
+      "address": "3iFbXd8aQ2iZ6EhmQomEKhmwaWrpAjFUyzrnovaYa8a9"
+    },
+    {
+      "symbol": "ind",
+      "name": "pacers",
+      "description": "Indiana Pacers",
+      "uri": "https://arweave.net/3_zs10Z1RQuiFsj52tn9e6ejTxpfeTAwH_ZPERlT3gc",
+      "address": "H1ZzEkQGA7e4njon6Huj48DGCLVFhdzzD5M7j1JzyzmM"
+    },
+    {
+      "symbol": "lac",
+      "name": "clippers",
+      "description": "Los Angeles Clippers",
+      "uri": "https://arweave.net/W0wyEMXOi57vvtmv6vrJnlj8GqdN0WWDrbp2JLm4LEk",
+      "address": "7CmYaYM3dPJ4D4w3Es2V39BhpCDZyKrVrLjxgddvbVPi"
+    },
+    {
+      "symbol": "lal",
+      "name": "lakers",
+      "description": "Los Angeles Lakers",
+      "uri": "https://arweave.net/klHkIGhWaMXSGvSFWLJA-icDVX_SjqYUOMD7twNltPQ",
+      "address": "HDhnievuvHFY2TbqsimnvDZ8AjGK7zc9VdvK5ZzSAXQq"
+    },
+    {
+      "symbol": "mem",
+      "name": "grizzlies",
+      "description": "Memphis Grizzlies",
+      "uri": "https://arweave.net/nrOrvl8uE2fgs_06yGr7RIVijCCy05_eAhMHgSmwNR8",
+      "address": "Ftm2nvaUZ6SEXtzEstipCCiJzMS6YP7HHPN1kySko8a"
+    },
+    {
+      "symbol": "mia",
+      "name": "heat",
+      "description": "Miami Heat",
+      "uri": "https://arweave.net/e1HN7EcmhWjp5WrNKV3tlYL7i5y0jZp4BOLTs6Owu5c",
+      "address": "Vp2Uiz2ZKZpNBgNbvKHt3kzHeue7d1Xgfnceinpyx6G"
+    },
+    {
+      "symbol": "mil",
+      "name": "bucks",
+      "description": "Milwaukee Bucks",
+      "uri": "https://arweave.net/pSmvqGgHJW4VOuWQGw8azG4ysMOoBjxNK3TeWs74vSU",
+      "address": "4NLyfC3Bxv8HWbYZ4hps3GxnNK7aVDtnXHMPmSM8VRji"
+    },
+    {
+      "symbol": "min",
+      "name": "timberwolves",
+      "description": "Minnesota Timberwolves",
+      "uri": "https://arweave.net/DXH9jRoZI0lO5piVWtWLxEiiLWBgeHxk4lUhPXTZwUc",
+      "address": "C8eGTGwxtKbxDZ6ehFG7owf6awusuT2qBV4iHufkhenK"
+    },
+    {
+      "symbol": "nop",
+      "name": "pelicans",
+      "description": "New Orleans Pelicans",
+      "uri": "https://arweave.net/291kw6hrb1qcu969ZfRkmGQV-7NjZfCxQRVZrjGZTno",
+      "address": "3Q5YcqqpZ4aAmvU4v95GiL97e3hH6cU6XsDr2YMLbKq4"
+    },
+    {
+      "symbol": "nyk",
+      "name": "knicks",
+      "description": "New York Knicks",
+      "uri": "https://arweave.net/MPI-UffceyzC_nDsyfYdr7cR-VRI9fvQOzbzEd13nNM",
+      "address": "FUWPEn8FkJvWtHD62mTDBwqiFXXxR3BmWQNzvfG9b4tF"
+    },
+    {
+      "symbol": "okc",
+      "name": "thunder",
+      "description": "Oklahoma City Thunder",
+      "uri": "https://arweave.net/6pqT9hxsS0HmnpII5GyVqQrSxLCdqd3I0twxK38AGaI",
+      "address": "7HoUuu6SBsqQC8Kf5VsmcTgebBZmPTYD2pHCWyvST5iu"
+    },
+    {
+      "symbol": "orl",
+      "name": "magic",
+      "description": "Orlando Magic",
+      "uri": "https://arweave.net/sRTJXZQERkYt6mYZ3vVCAQ8pHNq_XLp3QBrGBDaQpOY",
+      "address": "2mxQ6rQDxZA9RkZrpjsM3xUToLAHtQ4tbNKoHsZFyjnS"
+    },
+    {
+      "symbol": "phi",
+      "name": "76ers",
+      "description": "Philadelphia 76ers",
+      "uri": "https://arweave.net/n8pB3qEythcD_4e-WU5vqMr9gsdZMAqZ0m6BAX7OUgc",
+      "address": "DL8u5B1vMZAoaJQo9wnadTvnQiUbxTwJLYeVFgeetuYd"
+    },
+    {
+      "symbol": "phx",
+      "name": "suns",
+      "description": "Phoenix Suns",
+      "uri": "https://arweave.net/muJzSEbMn0mdAzPhYOPSxLg0JGH_oFiZ3fvi6MBluAk",
+      "address": "EAWsM6HrVfCcpwMpETF7JeSQucpE95QZQ8YA5GRyzk3A"
+    },
+    {
+      "symbol": "por",
+      "name": "blazers",
+      "description": "Portland Trail Blazers",
+      "uri": "https://arweave.net/lkbOCJ7F9yaYhHe1zS_XK4TyNnXm_B5zCkDDTCwt-mY",
+      "address": "CV7a8ntt33f99RxiwPQzXHqpbTVk6HXYqnyi3eQKCm7E"
+    },
+    {
+      "symbol": "sac",
+      "name": "kings",
+      "description": "Sacramento Kings",
+      "uri": "https://arweave.net/K2BWrYzLTuVTA2GoT9FLHu5OFTtmQ9z1X6-TY3NhYTY",
+      "address": "Fu4dBWpUDzHy1LwUG9292umbPQ5yGmoBM8acUDSBTwzd"
+    },
+    {
+      "symbol": "sas",
+      "name": "spurs",
+      "description": "San Antonio Spurs",
+      "uri": "https://arweave.net/DoN3CcuOVkE8hcWOwmrMw9L1imwnds9C8-yHtwbIq98",
+      "address": "FZYPMHxWejLLTGwq636C8KjxEj5qyDqC7QiAMWntQXgG"
+    },
+    {
+      "symbol": "tor",
+      "name": "raptors",
+      "description": "Toronto Raptors",
+      "uri": "https://arweave.net/hR-6LabZ1fm0bOjzoZ-nl_IR-Sx7DyqQznDcYc5T7Io",
+      "address": "5CB4qLt7ZhzgbADkc1kvbG1NKcTcEjYtvc19YTGuUxS1"
+    },
+    {
+      "symbol": "uta",
+      "name": "jazz",
+      "description": "Utah Jazz",
+      "uri": "https://arweave.net/GMmmFBpIGJ9m7BNQwRT4XYH01OVwCgQAy0v-ssWZeYI",
+      "address": "5twsUvL5TKwn3RTHQB2YRSJVgasGo9xJGpJzTQZXxhmn"
+    },
+    {
+      "symbol": "was",
+      "name": "wizards",
+      "description": "Washington Wizards",
+      "uri": "https://arweave.net/fgwx-MkrBCIy3OrtTbtD8W_Hwn0GUL9LAjM9Rov_kzA",
+      "address": "62icq8UXpF6M7VU9zfuHfeHiKkxDadFY7uEeYqYPANtC"
+    }
+  ]
+}
