@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from "react";
 import * as anchor from "@coral-xyz/anchor";
 import Image from "next/image";
-import { ClipboardCheckIcon,Clipboard } from "lucide-react";
+import { ClipboardCheckIcon, Clipboard } from "lucide-react";
+import { toast } from "react-toastify";
+import {
+  useAnchorWallet,
+  useWallet,
+  useConnection,
+} from "@solana/wallet-adapter-react";
+
+import * as constants from "@/utils/const";
+import { createAirdropTransaction } from "@/utils/util";
 
 interface AssetCardProps {
   name: string;
@@ -14,8 +23,12 @@ interface AssetCardProps {
 }
 
 const AssetCard = (props: AssetCardProps) => {
+  const wallet = useAnchorWallet();
+  const { sendTransaction, signTransaction } = useWallet();
+  const { connection } = useConnection();
   const [imagePath, setImagePath] = useState<string>("");
   const [isCopying, setIsCopying] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const nominalBalance = Math.floor(
     props.balance / Math.pow(10, props.decimals)
@@ -32,6 +45,27 @@ const AssetCard = (props: AssetCardProps) => {
     setTimeout(() => {
       setIsCopying(false);
     }, 2000);
+  };
+
+  const requestAirdrop = async () => {
+    setIsLoading(true);
+    const Tx = await createAirdropTransaction(
+      wallet,
+      constants.AIRDROP_AMOUNT,
+      props.name
+    );
+
+    try {
+      const sig = await sendTransaction(Tx, connection, {
+        preflightCommitment: constants.PREFLIGHT_COMMITMENT,
+      });
+
+      toast.success(`Airdrop Successful`);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -70,15 +104,33 @@ const AssetCard = (props: AssetCardProps) => {
         </div>
       </div>
       <div className="flex flex-col gap-2">
-        <div className="py-4 rounded-lg bg-[#2F333A] flex justify-between items-center px-2 cursor-pointer" onClick={copyToClipboard}>
+        <div
+          className="py-4 rounded-lg bg-[#2F333A] flex justify-between items-center px-2 cursor-pointer"
+          onClick={copyToClipboard}
+        >
           <p className=" truncate px-2 text-white text-md w-48 text-wrap">
             {props.mint.toString()}
           </p>
-          {
-            isCopying ? <ClipboardCheckIcon className="text-green-500" /> : <Clipboard className="text-white" />
-          }
+          {isCopying ? (
+            <ClipboardCheckIcon className="text-green-500" />
+          ) : (
+            <Clipboard className="text-white" />
+          )}
         </div>
-        <button className="btn-active btn self-start" > Airdrop 5 {props.symbol.toUpperCase()}</button>
+        <button
+          className={`btn-active btn self-start ${
+            isLoading ? "btn-disabled" : ""
+          }`}
+          onClick={requestAirdrop}
+          disabled={isLoading}
+        >
+          {" "}
+          {isLoading
+            ? "Loading..."
+            : `Airdrop ${
+                constants.AIRDROP_AMOUNT
+              } ${props.symbol.toUpperCase()}`}
+        </button>
       </div>
     </div>
   );
