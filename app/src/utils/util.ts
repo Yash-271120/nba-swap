@@ -1,5 +1,7 @@
 import * as anchor from "@coral-xyz/anchor";
 import { AnchorWallet } from "@solana/wallet-adapter-react";
+import { getOrCreateAssociatedTokenAccount } from "@solana/spl-token";
+
 import * as constants from "./const";
 import { walletNullErr } from "./error";
 import { SwapProgram } from "@/idl/swap_program";
@@ -21,7 +23,27 @@ export async function getAnchorConfigs(
 
   const program = new anchor.Program(IDL as SwapProgram, provider);
 
-  const seedUtil = new SeedUtil(program);
+  const seedUtil = new SeedUtil(program, wallet);
 
   return [provider, program, seedUtil];
+}
+
+export async function createAirdropTransaction(
+  wallet: AnchorWallet | undefined,
+  amount: number,
+  mintName: string
+) {
+  const [provider, program, seedUtil] = await getAnchorConfigs(wallet);
+
+  const mintPda = seedUtil.getMintPda(mintName);
+  const payerTokenAccount = seedUtil.getAssociatedTokenAccountPda(mintPda);
+
+  const tx = await program.methods
+    .requestAirdrop(mintName, amount)
+    .accounts({
+      payerTokenAccount,
+    })
+    .transaction();
+
+  return tx;
 }
