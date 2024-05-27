@@ -12,7 +12,6 @@ export const WalletContextProvider: FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const endpoint = useMemo(() => constants.RPC_ENDPOINT, []);
-  const network = useMemo(() => constants.RPC_ENDPOINT, []);
 
   const wallets = useMemo(() => [], []);
 
