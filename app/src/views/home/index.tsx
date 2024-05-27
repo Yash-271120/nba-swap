@@ -41,7 +41,7 @@ export const HomeView = () => {
                                         width="350"
                                         height="350"
                                     />
-                                    <SwapCard assets={assets} />
+                                    <SwapCard assets={assets} getAssets={getAssetsFromChain}/>
                                 </div>
                                 <div className="grid grid-cols-4 gap-4 mt-4">
                                     {assets.map((asset, i) => (

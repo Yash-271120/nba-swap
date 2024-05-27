@@ -7,17 +7,16 @@ import {
 import { ArrowLeftRight } from "lucide-react";
 import { toast } from "react-toastify";
 
-import * as constants from "@/utils/const";
-import { getAnchorConfigs, createSwapTransaction } from "@/utils/util";
-import { Asset, getAssets } from "@/stores/useAssetsStore";
+import { createSwapTransaction } from "@/utils/util";
+import { Asset } from "@/stores/useAssetsStore";
 import { useAnchorProgram } from "@/hooks/useAnchorConfig";
-import { AnchorError } from "@coral-xyz/anchor";
 
 interface TokenSwapProps {
   assets: Asset[];
+  getAssets: () => Promise<void>;
 }
 
-export const SwapCard = ({ assets }: TokenSwapProps) => {
+export const SwapCard = ({ assets, getAssets }: TokenSwapProps) => {
   const program = useAnchorProgram();
   const [fromToken, setFromToken] = useState<Asset>(assets[0]);
   const [toToken, setToToken] = useState<Asset>(assets[1]);
@@ -48,7 +47,8 @@ export const SwapCard = ({ assets }: TokenSwapProps) => {
       toToken.name
     );
     try {
-     const sig = await sendTransaction(tx, connection);
+      const sig = await sendTransaction(tx, connection);
+      await getAssets();
       console.log(sig);
       toast.success("Swap successful");
     } catch (error) {
