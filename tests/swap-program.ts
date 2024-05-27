@@ -4,6 +4,7 @@ import { getOrCreateAssociatedTokenAccount, getMint } from "@solana/spl-token";
 import { SwapProgram } from "../target/types/swap_program";
 import assetJson from "./nba/assets.json";
 import fs from "fs";
+import * as contants from "../app/src/utils/const"
 import { Connection } from "@solana/web3.js";
 
 describe("swap-program", () => {
@@ -12,9 +13,10 @@ describe("swap-program", () => {
   const provider = anchor.AnchorProvider.env();
 
   const connection = new anchor.web3.Connection(
-    "https://api.devnet.solana.com ",
-    "confirmed"
+    contants.RPC_ENDPOINT,
+    contants.PREFLIGHT_COMMITMENT
   );
+
   const TOKEN_METADATA_PROGRAM_ID = new anchor.web3.PublicKey(
     "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s"
   );
