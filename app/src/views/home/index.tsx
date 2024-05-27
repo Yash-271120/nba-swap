@@ -5,6 +5,7 @@ import { useAnchorWallet } from "@solana/wallet-adapter-react";
 import { Asset, getAssets } from "@/stores/useAssetsStore";
 import { useAnchorProgram } from "@/hooks/useAnchorConfig";
 import AssetCard from "@/components/AssetCard";
+import {SwapCard} from "@/components/SwapCard";
 
 export const HomeView = () => {
   const wallet = useAnchorWallet();
@@ -40,7 +41,7 @@ export const HomeView = () => {
                                         width="350"
                                         height="350"
                                     />
-                                    {/* <SwapCard assets={assets} /> */}
+                                    <SwapCard assets={assets} />
                                 </div>
                                 <div className="grid grid-cols-4 gap-4 mt-4">
                                     {assets.map((asset, i) => (

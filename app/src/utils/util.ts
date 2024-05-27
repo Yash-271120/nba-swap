@@ -1,6 +1,6 @@
 import * as anchor from "@coral-xyz/anchor";
 import { AnchorWallet } from "@solana/wallet-adapter-react";
-import { getOrCreateAssociatedTokenAccount } from "@solana/spl-token";
+import { getAssociatedTokenAddressSync } from "@solana/spl-token";
 
 import * as constants from "./const";
 import { walletNullErr } from "./error";
@@ -42,6 +42,45 @@ export async function createAirdropTransaction(
     .requestAirdrop(mintName, amount)
     .accounts({
       payerTokenAccount,
+    })
+    .transaction();
+
+  return tx;
+}
+
+export async function createSwapTransaction(
+  wallet: AnchorWallet | undefined,
+  amount: number,
+  payMintName: string,
+  payMintDecimals: number,
+  receiveMintName: string
+) {
+  const [provider, program, seedUtil] = await getAnchorConfigs(wallet);
+
+  const payMintPda = seedUtil.getMintPda(payMintName);
+  const receiveMintPda = seedUtil.getMintPda(receiveMintName);
+
+  const payerPayAssociatedTokenAccount =
+    seedUtil.getAssociatedTokenAccountPda(payMintPda);
+  const payerReceiveAssociatedTokenAccount =
+    seedUtil.getAssociatedTokenAccountPda(receiveMintPda);
+
+  const poolPayAssociatedTokenAccount =
+    seedUtil.getPoolAssociatedTokenAccountPda(payMintPda);
+  const poolReceiveAssociatedTokenAccount =
+    seedUtil.getPoolAssociatedTokenAccountPda(receiveMintPda);
+
+  // const payAmount = BigInt(amount) * BigInt(10) ** BigInt(payMintDecimals);
+
+  const tx = await program.methods
+    .swap(new anchor.BN(amount))
+    .accounts({
+      payerPayTokenAccount: payerPayAssociatedTokenAccount,
+      payerReceiveTokenAccount: payerReceiveAssociatedTokenAccount,
+      payMint: payMintPda,
+      receiveMint: receiveMintPda,
+      poolPayTokenAccount: poolPayAssociatedTokenAccount,
+      poolReceiveTokenAccount: poolReceiveAssociatedTokenAccount,
     })
     .transaction();
 

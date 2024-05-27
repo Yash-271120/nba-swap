@@ -2,6 +2,7 @@ import * as anchor from "@coral-xyz/anchor";
 import {
   TOKEN_PROGRAM_ID,
   ASSOCIATED_TOKEN_PROGRAM_ID,
+  getAssociatedTokenAddressSync,
 } from "@solana/spl-token";
 import { AnchorWallet } from "@solana/wallet-adapter-react";
 
@@ -55,14 +56,14 @@ export class SeedUtil {
   };
 
   getAssociatedTokenAccountPda = (mint: anchor.web3.PublicKey) => {
-    const [pda, _] = anchor.web3.PublicKey.findProgramAddressSync(
-      [
-        this.wallet.publicKey.toBuffer(),
-        TOKEN_PROGRAM_ID.toBuffer(),
-        mint.toBuffer(),
-      ],
-      ASSOCIATED_TOKEN_PROGRAM_ID
-    );
+    const pda = getAssociatedTokenAddressSync(mint, this.wallet.publicKey);
+    return pda;
+  };
+
+  getPoolAssociatedTokenAccountPda = (mint: anchor.web3.PublicKey) => {
+    const poolPda = this.getLiquidityPoolPda();
+    const pda = getAssociatedTokenAddressSync(mint, poolPda, true);
+
     return pda;
   };
 }
